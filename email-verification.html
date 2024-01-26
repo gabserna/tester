@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email verificator</title>
+
+  <!-- Agrega la referencia a Axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+  <h2>Email verificator</h2>
+
+  <form id="emailForm">
+    <label for="email">Add email to verify:</label>
+    <input type="email" id="email" name="email" required>
+    <button type="button" onclick="verificarEmail()">check</button>
+  </form>
+
+  <div id="resultado"></div>
+
+  <script>
+    async function verificarEmail() {
+      const emailInput = document.getElementById('email').value;
+
+      const encodedParams = new URLSearchParams();
+      encodedParams.set('email', emailInput);
+
+      const options = {
+        method: 'POST',
+        url: 'https://email-validator8.p.rapidapi.com/api/v2.0/email',
+        headers: {
+          'content-type': 'application/x-www-form-urlencoded',
+          'X-RapidAPI-Key': '99d38a2b97msh75d7a61a419fc8ap103dd3jsnbbc807186691',
+          'X-RapidAPI-Host': 'email-validator8.p.rapidapi.com'
+        },
+        data: encodedParams,
+      };
+
+      try {
+        const response = await axios.request(options);
+
+        // Crea la tabla con bordes
+        const tableHTML = `
+          <table border="2">
+            <tr>
+              <th>Email</th>
+              <th>Valid</th>
+              <th>Disposable</th>
+              <th>MX record</th>
+              <th>Exists</th>
+            </tr>
+            <tr>
+              <td>${response.data.email}</td>
+              <td>${response.data.valid}</td>
+              <td>${response.data.disposable}</td>
+              <td>${response.data.mx_records}</td>
+              <td>${response.data.exists}</td>
+            </tr>
+          </table>
+        `;
+
+        document.getElementById('resultado').innerHTML = tableHTML;
+      } catch (error) {
+        console.error(error);
+        document.getElementById('resultado').innerText = 'Error al verificar el email.';
+      }
+    }
+  </script>
+
+</body>
+</html>

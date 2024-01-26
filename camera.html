@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: #00ff41;
+        }
+        .camera {
+            margin: 0 auto;
+            margin-top: 2rem;
+            padding: 2rem;
+            width: 50%;
+            display: flex;
+            justify-self: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Roboto', sans-serif;
+            gap: 5rem;
+        }
+        label {
+            display: flex;
+            justify-self: center;
+            align-items: center;
+        }
+
+        .selfie, .photo {
+            width: 100%;
+            display: flex;
+            justify-self: center;
+            align-items: center;
+            /* border: 2px solid red; */
+            gap: 1rem;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="camera">
+
+        <div class="selfie">
+            <label for="selfie"> Take a selfie!</label>
+            <input type="file" id="selfie" capture="user" />
+        </div>
+        <div class="photo">
+            <label for="photo"> Take a photo!</label>
+            <input type="file" id="photo" capture="environment" />
+        </div>
+
+    </div>
+
+</body>
+
+</html>

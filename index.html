@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    :root {
+        --green: #40cf8e;
+        --text-color: #bbbbbb;
+        --white-color: #ededed;
+        --black-color: #131313;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        gap: 10px;
+        background-color: #2d2d2d;
+    }
+
+    /* aplicar en el div principal despues de body */
+    .wrapper div {
+        -webkit-user-select: none;
+        user-select: none;
+        height: 25vh;
+        background: linear-gradient(180deg, #000000, #000000, #000000e6,
+                #000000cc, #000000b3, #00000099, #00000080, #00000066,
+                #0000004d, #00000033, #0000001a, var(--black-color));
+    }
+
+    .wrapper div {
+        width: 200px;
+        height: 200px;
+        border: 2px solid black;
+        border-radius: 10%;
+    }
+
+    .wrapper div:nth-child(1) {
+        background-color: #2d2d2d;
+        animation: animate 10s linear infinite;
+    }
+
+    .svgs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+        color: var(--text-color);
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    svg {
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+
+    .writings-card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        border-radius: 5px;
+        border: 1px solid #2d2d2d;
+        transition: border .2s ease;
+        position: relative;
+        background-color: #1c1c1c;
+        box-shadow: 0 2px 3px #0000003d;
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="square1"></div><br>
+        <div class="square2"></div><br>
+        <div class="square3"></div><br>
+        <div class="square4"></div><br>
+        <div class="square5"></div><br>
+    </div>
+
+    <div class="svgs">
+
+        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+            stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 
+                5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 
+                5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+            </path>
+        </svg>
+
+        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+            stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+
+    </div>
+
+    <iframe src="https://www.sollenaturals.com/" name="SolleNaturals" title="SolleNaturals" width="170" height="180"
+        scrolling="no" frameborder="0" seamless border="0"></iframe>
+
+
+
+</body>
+
+</html>
